@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo sphere from inside</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/photosphere.css" />	
+</head>
+<body>
+	<div id="photosphere"></div>
+	<div id="earth"></div>
+	<a href="photosphere.html" class="tm"><img src="images/thematicmapping.png"></a>		
+	<script src="lib/three.min.js"></script>	
+	<script src="lib/OrbitControls.js"></script>	
+	<script src="js/Photosphere.js"></script>	
+	<script>
+
+	var photosphere = THREE.Photosphere(document.getElementById('photosphere'), 'images/bergsjostolen.jpg');
+	var earth = THREE.Photosphere(document.getElementById('earth'), 'images/naturalearth.jpg');
+
+	window.addEventListener('resize', function() {
+		photosphere.resize();
+		earth.resize();
+	}, false);
+
+	</script>
+</body>
+</html>
