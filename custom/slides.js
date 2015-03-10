@@ -46,12 +46,12 @@ function webglHandler (h, v) {
 						webgl = THREE.GlobeFrame(document.getElementById('globe-frame'));
 						break;
 					case '43':
-						webgl = THREE.Globe(document.getElementById('globe-world'), 'images/naturalearth.jpg');
-						webgl2 = THREE.Globe(document.getElementById('globe-image'), 'images/bergsjostolen.jpg');
+						webgl = THREE.Globe(document.getElementById('globe-world'), 'custom/images/naturalearth.jpg');
+						webgl2 = THREE.Globe(document.getElementById('globe-image'), 'custom/images/bergsjostolen.jpg');
 						break;
 					case '44':
-						webgl = THREE.Photosphere(document.getElementById('photosphere-world'), 'images/naturalearth.jpg');
-						webgl2 = THREE.Photosphere(document.getElementById('photosphere-image'), 'images/bergsjostolen.jpg');
+						webgl = THREE.Photosphere(document.getElementById('photosphere-world'), 'custom/images/naturalearth.jpg');
+						webgl2 = THREE.Photosphere(document.getElementById('photosphere-image'), 'custom/images/bergsjostolen.jpg');
 						break;
 				}
 			}
