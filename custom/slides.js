@@ -14,44 +14,42 @@ Reveal.initialize({
 
 var state = Reveal.getState();
 
-webglHandler(state.indexh, state.indexv);
+slideHandler(state.indexh, state.indexv);
 
 Reveal.addEventListener('slidechanged', function(evt) {
-	webglHandler(evt.indexh, evt.indexv);
+	slideHandler(evt.indexh, evt.indexv);
 });
 
 var webgl, webgl2;
 
-function webglHandler (h, v) {
-	
-				//console.log(h, v);
+function slideHandler (h, v) {
+	//console.log(h, v);
 
-				if (h === 1 && v > 1 && v < 9) {
-					Reveal.configure({ transition: 'none' });
-				} else {
-					Reveal.configure({ transition: 'convex' });
-				}
+	if (h === 1 && v > 1 && v < 9) {
+		Reveal.configure({ transition: 'none' });
+	} else {
+		Reveal.configure({ transition: 'convex' });
+	}
 
+	if (webgl) {
+		webgl.remove();				
+	}
 
-				if (webgl) {
-					webgl.remove();				
-				}
+	if (webgl2) {
+		webgl2.remove();				
+	}
 
-				if (webgl2) {
-					webgl2.remove();				
-				}
-
-				switch ('' + h + v) {
-					case '42':
-						webgl = THREE.GlobeFrame(document.getElementById('globe-frame'));
-						break;
-					case '43':
-						webgl = THREE.Globe(document.getElementById('globe-world'), 'custom/images/naturalearth.jpg');
-						webgl2 = THREE.Globe(document.getElementById('globe-image'), 'custom/images/bergsjostolen.jpg');
-						break;
-					case '44':
-						webgl = THREE.Photosphere(document.getElementById('photosphere-world'), 'custom/images/naturalearth.jpg');
-						webgl2 = THREE.Photosphere(document.getElementById('photosphere-image'), 'custom/images/bergsjostolen.jpg');
-						break;
-				}
-			}
+	switch ('' + h + v) {
+		case '42':
+			webgl = THREE.GlobeFrame(document.getElementById('globe-frame'));
+			break;
+		case '43':
+			webgl = THREE.Globe(document.getElementById('globe-world'), 'custom/images/naturalearth.jpg');
+			webgl2 = THREE.Globe(document.getElementById('globe-image'), 'custom/images/bergsjostolen.jpg');
+			break;
+		case '44':
+			webgl = THREE.Photosphere(document.getElementById('photosphere-world'), 'custom/images/naturalearth.jpg');
+			webgl2 = THREE.Photosphere(document.getElementById('photosphere-image'), 'custom/images/bergsjostolen.jpg');
+			break;
+	}
+}
