@@ -1,0 +1,11 @@
+body { 
+	background: #000;
+}
+
+iframe {
+	background: #fff;
+}
+
+.reveal section img {
+  border: 0;
+}
