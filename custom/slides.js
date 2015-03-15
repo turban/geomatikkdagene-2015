@@ -8,6 +8,7 @@ Reveal.initialize({
 	width: 1200,
 	height: 900,				
     margin: 0,
+    viewDistance: 1,
 	transition: 'convex' // none/fade/slide/convex/concave/zoom
 });
 
