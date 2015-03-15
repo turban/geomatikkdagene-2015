@@ -8,7 +8,6 @@ Reveal.initialize({
 	width: 1200,
 	height: 900,				
     margin: 0,
-    viewDistance: 1,
 	transition: 'convex' // none/fade/slide/convex/concave/zoom
 });
 
@@ -26,7 +25,7 @@ var webgl, webgl2;
 function slideHandler (h, v) {
 	//console.log(h, v);
 
-	if (h === 1 && v > 1 && v < 9) {
+	if (h === 1 && v > 1 && v <3) {
 		Reveal.configure({ transition: 'none' });
 	} else {
 		Reveal.configure({ transition: 'convex' });
